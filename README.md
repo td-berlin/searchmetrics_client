@@ -1,5 +1,7 @@
 # SearchmetricsClient
 
+[![Build Status](https://travis-ci.org/td-berlin/searchmetrics_client.svg)](https://travis-ci.org/td-berlin/searchmetrics_client)
+
 A thin abstraction over the [searchmetrics API](http://api.searchmetrics.com).
 
 ## Status
