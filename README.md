@@ -4,10 +4,6 @@
 
 A thin abstraction over the [searchmetrics API](http://api.searchmetrics.com).
 
-## Status
-
-2015-11-18: This is currently work in progress. We will release a working version soon.
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -24,9 +20,64 @@ Or install it yourself as:
 
     $ gem install searchmetrics_client
 
+## Configuration
+
+To start using gem you have to configure API keys as bellow:
+
+```ruby
+SearchmetricsClient.configure do |config|
+  config.api_key    = 'Your api key'
+  config.api_secret = 'Your api secret'
+end
+```
+
+Additionally you can specify `api_version` and `api_url`, which defaults to `v1` and `http://api.searchmetrics.com` regardless.
+
 ## Usage
 
-TODO: Write usage instructions here
+To get metric from Searchmetrics server use:
+
+```ruby
+SearchmetricsClient::Request.send_request_from_hash(
+  endpoint: 'ResearchLinksGetListLinktext',
+  params: { countrycode: 'PL',
+            keyword: 'ruby' }
+)
+```
+
+Key `endpoint` is required.
+
+`SearchmetricsClient::Response` object will be returned.
+
+Exemplary call:
+
+```ruby
+response = SearchmetricsClient::Request.send_request_from_hash(
+             endpoint: 'ResearchKeywordsGetListKeywordinfo',
+             params: { countrycode: 'DE', keyword: 'ruby' }
+           )
+```
+Returned value can be accessed by `#value` method:
+
+```ruby
+response.value
+# => [{:cpc=>"2.37", :competition=>"3", :search_volume=>"12366", :trend=>"81:100:100:81:81:81:81:66:81:81:81:81", :ad_budget=>"29307.419999999998", :integration=>"images", :advertiser_count=>"0", :keyword=>"ruby", :year_month=>"201510"}]
+```
+
+`#endpoint` returns requested type:
+
+```ruby
+response.endpoint # => "ResearchKeywordsGetListKeywordinfo"
+```
+
+`#url` returns requested url:
+
+```ruby
+response.url # => "http://api.searchmetrics.com/v1/ResearchKeywordsGetListKeywordinfo.json?countrycode=DE&keyword=ruby"
+```
+
+Access to raw response is available by methods `#header` and `#body`.
+
 
 ## Development
 
