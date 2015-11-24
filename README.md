@@ -39,7 +39,7 @@ To get metric from Searchmetrics server use:
 
 ```ruby
 SearchmetricsClient::Request.send_request_from_hash(
-  endpoint: 'ResearchLinksGetListLinktext',
+  endpoint: 'ResearchKeywordsGetListKeywordinfo',
   params: { countrycode: 'PL',
             keyword: 'ruby' }
 )
