@@ -103,6 +103,17 @@ release a new version, update the version number in `version.rb`, and then run
 git commits and tags, and push the `.gem` file to
 [rubygems.org](https://rubygems.org).
 
+## Testing
+
+First you need to have API key and secret and put them on
+`spec/searchmetrics_config.yml`. You can find an example in
+`spec/searchmetrics_config.yml.example`.
+
+
+```
+bundle exec rspec
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at
