@@ -18,7 +18,7 @@ module SearchmetricsClient
     def generate_access_token
       consumer = OAuth::Consumer.new(SearchmetricsClient.configuration.api_key,
                                      SearchmetricsClient.configuration.api_secret,
-                                     site: SearchmetricsClient.configuration.api_url)
+                                     site: SearchmetricsClient.configuration.api_base_url)
       OAuth::AccessToken.from_hash(consumer, oauth_token: '', oauth_token_secret: '')
     end
   end

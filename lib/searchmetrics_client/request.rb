@@ -38,11 +38,7 @@ module SearchmetricsClient
     end
 
     def build_url
-      [
-        "#{SearchmetricsClient.configuration.api_url}/",
-        "#{SearchmetricsClient.configuration.api_version}/",
-        query.query
-      ].join
+      File.join(SearchmetricsClient.configuration.api_url, query.query)
     end
 
     def check_credentials
