@@ -7,3 +7,6 @@
 /pkg/
 /spec/reports/
 /tmp/
+
+# project, testing specific
+spec/searchmetrics_config.yml
