@@ -51,8 +51,17 @@ module SearchmetricsClient
       SearchmetricsClient.configuration.api_key && SearchmetricsClient.configuration.api_secret
     end
 
+    # Handle both OAuth v1 and v2 Response object
+    # v1 is returning `Net::HTTPOK`... objects
+    # v2 is returning `OAuth::Response`
+    def result_success?(result)
+      return true if result.respond_to?(:code) && result.code == '200'
+      return true if result.respond_to?(:status) && result.status == 200
+      false
+    end
+
     def check_errors(result)
-      return if result.code == '200'
+      return if result_success?(result)
       message = MultiJson.load(result.body, symbolize_keys: true)[:error_message]
       fail SearchmetricsClient::Errors::ApiRequestError.new(message, result)
     end
