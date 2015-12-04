@@ -38,13 +38,13 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
           it 'fail with error on wrong endpoint' do
             expect { described_class.send_request(wrong_params_query) }.to(
               raise_error(SearchmetricsClient::Errors::ApiRequestError,
-                          'For service "ResearchLinksGetListLinktext" parameter "url" is required!')
+                          'For service "ResearchLinksGetListLinktext" ' \
+                          'parameter "url" is required!')
             )
             expect { described_class.send_request(wrong_endpoint_query) }.to(
-              raise_error(
-                SearchmetricsClient::Errors::ApiRequestError,
-                'There is no service "ResearchLinksGetListLinktex" for method "GET" in version "v1"'
-              )
+              raise_error(SearchmetricsClient::Errors::ApiRequestError,
+                          'There is no service "ResearchLinksGetListLinktex" ' \
+                          'for method "GET" in version "v1"')
             )
           end
         end
