@@ -28,6 +28,7 @@ describe SearchmetricsClient::Client, vcr: { cassette_name: 'searchmetrics',
         SearchmetricsClient.configuration.api_version = SearchmetricsClient::API_DEFAULT_VERSION
       end
 
+      # http://api.searchmetrics.com/v3/documentation/api-calls/service/AdminStatusGetListProjects
       let(:url) do
         File.join(SearchmetricsClient::API_BASE_URL,
                   api_version,

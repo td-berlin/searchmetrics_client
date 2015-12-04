@@ -33,6 +33,7 @@ module SearchmetricsClient
       OAuth::AccessToken.from_hash(consumer, oauth_token: '', oauth_token_secret: '')
     end
 
+    # http://api.searchmetrics.com/v3/documentation/start
     def access_token_api_v3
       token_url = File.join(api_url, 'token')
       client = OAuth2::Client.new(SearchmetricsClient.configuration.api_key,
