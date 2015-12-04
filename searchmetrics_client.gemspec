@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'oauth', '~> 0.4.7'
+  spec.add_dependency 'oauth2', '~> 1.0'
   spec.add_dependency 'multi_json', '~> 1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
