@@ -2,7 +2,11 @@ require 'spec_helper'
 
 describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
                                               record: :new_episodes } do
-  let(:url) { 'http://api.searchmetrics.com/v1/AdminStatusGetValueAvailableCredits.json' }
+  let(:url) do
+    File.join(SearchmetricsClient::API_BASE_URL,
+              api_version,
+              'AdminStatusGetValueAvailableCredits.json')
+  end
   let(:query) do
     SearchmetricsClient::Query.from_hash(endpoint: 'ResearchLinksGetListLinktext',
                                          params: { url: 'example.url' })
