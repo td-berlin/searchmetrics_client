@@ -61,4 +61,33 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
       end
     end
   end
+
+  context 'APIv2' do
+    let(:url) do
+      File.join(SearchmetricsClient::API_BASE_URL,
+                api_version,
+                'AdminStatusGetValueAvailableCredits.json')
+    end
+    # http://api.searchmetrics.com/v3/documentation/api-calls/service/ResearchSocialGetValueVisibility
+    let(:query) do
+      SearchmetricsClient::Query.from_hash(endpoint: 'AdminStatusGetListProjects')
+    end
+
+    context 'when api credentials are configured' do
+      include_context 'with api credentials' do
+        let(:api_version) { 'v3' }
+      end
+
+      after do
+        SearchmetricsClient.configuration.api_version = SearchmetricsClient::API_DEFAULT_VERSION
+      end
+
+      describe '#send_request' do
+        it 'returns response when request is correct' do
+          expect(described_class.send_request(query))
+            .to be_kind_of(SearchmetricsClient::Response)
+        end
+      end
+    end
+  end
 end
