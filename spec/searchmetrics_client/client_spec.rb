@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe SearchmetricsClient::Client, vcr: { cassette_name: 'searchmetrics',
                                              record: :new_episodes } do
-  context 'v1' do
+  include_context 'with api credentials'
+
+  context 'AdminStatusGetValueAvailableCredits' do
     let(:url) do
       File.join(SearchmetricsClient::API_BASE_URL,
                 api_version,
@@ -13,21 +15,13 @@ describe SearchmetricsClient::Client, vcr: { cassette_name: 'searchmetrics',
       include_context 'with api credentials'
 
       it 'access metric with success' do
-        expect(described_class.instance.get(url).code).to be_eql('200')
+        expect(described_class.instance.get(url).status).to be_eql(200)
       end
     end
   end
 
-  context 'v3' do
+  context 'AdminStatusGetListProjects' do
     context 'when api credentials are configured' do
-      include_context 'with api credentials' do
-        let(:api_version) { 'v3' }
-      end
-
-      after do
-        SearchmetricsClient.configuration.api_version = SearchmetricsClient::API_DEFAULT_VERSION
-      end
-
       # http://api.searchmetrics.com/v3/documentation/api-calls/service/AdminStatusGetListProjects
       let(:url) do
         File.join(SearchmetricsClient::API_BASE_URL,

@@ -8,6 +8,6 @@ require 'searchmetrics_client/request'
 require 'searchmetrics_client/response'
 
 module SearchmetricsClient
-  API_DEFAULT_VERSION = 'v1'
+  API_DEFAULT_VERSION = 'v3'
   API_BASE_URL = 'http://api.searchmetrics.com'
 end

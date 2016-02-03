@@ -43,8 +43,7 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
             )
             expect { described_class.send_request(wrong_endpoint_query) }.to(
               raise_error(SearchmetricsClient::Errors::ApiRequestError,
-                          'There is no service "ResearchLinksGetListLinktex" ' \
-                          'for method "GET" in version "v1"')
+                          'Unknown Service "ResearchLinksGetListLinktex"')
             )
           end
         end

@@ -27,6 +27,8 @@ module SearchmetricsClient
       result = Client.instance.public_send(method, url)
       check_errors(result)
       @response = SearchmetricsClient::Response.new(self, result)
+    rescue OAuth2::Error => e
+      check_errors(e.response)
     end
 
     private

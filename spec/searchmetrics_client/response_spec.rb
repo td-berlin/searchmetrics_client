@@ -13,7 +13,7 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
 
     describe '#value' do
       it 'return array data' do
-        expect(response.value).to be_instance_of Array
+        expect(response.value).to be_instance_of Hash
       end
     end
 
