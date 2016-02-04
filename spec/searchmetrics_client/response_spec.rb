@@ -12,8 +12,9 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
     include_context 'with api credentials'
 
     describe '#value' do
-      it 'return array data' do
+      it 'return hash data' do
         expect(response.value).to be_instance_of Hash
+        expect(response.value).to eq({ balance: 59981 })
       end
     end
 
