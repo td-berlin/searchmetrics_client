@@ -14,7 +14,7 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
     describe '#value' do
       it 'return hash data' do
         expect(response.value).to be_instance_of Hash
-        expect(response.value).to eq({ balance: 59981 })
+        expect(response.value).to eq(balance: 59_981)
       end
     end
 

@@ -2,7 +2,7 @@ require 'forwardable'
 require 'multi_json'
 
 module SearchmetricsClient
-  class Request
+  class Request # :nodoc:
     attr_reader :url, :query, :response
 
     extend Forwardable
@@ -35,7 +35,7 @@ module SearchmetricsClient
     def method
       return :get if endpoint =~ /Get/
       return :post if endpoint =~ /Post/
-      fail SearchmetricsClient::Errors::WrongMethodError
+      raise SearchmetricsClient::Errors::WrongMethodError
     end
 
     def build_url
@@ -45,11 +45,14 @@ module SearchmetricsClient
     end
 
     def check_credentials
-      fail SearchmetricsClient::Errors::ApiCredentialsNotProvided unless credentials_present?
+      unless credentials_present?
+        raise SearchmetricsClient::Errors::ApiCredentialsNotProvided
+      end
     end
 
     def credentials_present?
-      SearchmetricsClient.configuration.api_key && SearchmetricsClient.configuration.api_secret
+      SearchmetricsClient.configuration.api_key &&
+        SearchmetricsClient.configuration.api_secret
     end
 
     def result_success?(result)
@@ -59,8 +62,9 @@ module SearchmetricsClient
 
     def check_errors(result)
       return if result_success?(result)
-      message = MultiJson.load(result.body, symbolize_keys: true)[:error_message]
-      fail SearchmetricsClient::Errors::ApiRequestError.new(message, result)
+      body = MultiJson.load(result.body, symbolize_keys: true)
+      message = body[:error_message]
+      raise SearchmetricsClient::Errors::ApiRequestError.new(message, result)
     end
   end
 end

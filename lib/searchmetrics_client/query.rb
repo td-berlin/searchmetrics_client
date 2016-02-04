@@ -1,5 +1,5 @@
 module SearchmetricsClient
-  class Query
+  class Query # :nodoc:
     attr_accessor :query, :endpoint, :params
 
     def self.from_hash(hash)

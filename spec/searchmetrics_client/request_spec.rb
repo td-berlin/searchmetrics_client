@@ -9,15 +9,23 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
                 'AdminStatusGetValueAvailableCredits.json')
     end
     let(:query) do
-      SearchmetricsClient::Query.from_hash(endpoint: 'ResearchLinksGetListLinktext',
-                                           params: { url: 'example.url' })
+      SearchmetricsClient::Query.from_hash(
+        endpoint: 'ResearchLinksGetListLinktext',
+        params: { url: 'example.url' }
+      )
     end
     let(:wrong_params_query) do
-      SearchmetricsClient::Query.from_hash(endpoint: 'ResearchLinksGetListLinktext')
+      SearchmetricsClient::Query.from_hash(
+        endpoint: 'ResearchLinksGetListLinktext'
+      )
     end
-    let(:wrong_endpoint_method_query) { SearchmetricsClient::Query.from_hash(endpoint: 't') }
+    let(:wrong_endpoint_method_query) do
+      SearchmetricsClient::Query.from_hash(endpoint: 't')
+    end
     let(:wrong_endpoint_query) do
-      SearchmetricsClient::Query.from_hash(endpoint: 'ResearchLinksGetListLinktex')
+      SearchmetricsClient::Query.from_hash(
+        endpoint: 'ResearchLinksGetListLinktex'
+      )
     end
 
     context 'when api credentials are configured' do
@@ -25,14 +33,15 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
 
       describe '#send_request' do
         it 'returns response when request is correct' do
-          expect(described_class.send_request(query)).to be_kind_of(SearchmetricsClient::Response)
+          expect(described_class.send_request(query))
+            .to be_kind_of(SearchmetricsClient::Response)
         end
 
         context 'when request is not correct' do
           it 'fail with error when no HTTP method found' do
-            expect { described_class.send_request(wrong_endpoint_method_query) }.to(
-              raise_error(SearchmetricsClient::Errors::WrongMethodError)
-            )
+            expect do
+              described_class.send_request(wrong_endpoint_method_query)
+            end.to raise_error(SearchmetricsClient::Errors::WrongMethodError)
           end
 
           it 'fail with error on wrong endpoint' do
@@ -51,8 +60,10 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
 
       describe '#send_request_from_hash' do
         let(:result) do
-          described_class.send_request_from_hash(endpoint: 'ResearchLinksGetListLinktext',
-                                                 params: { url: 'example.url' })
+          described_class.send_request_from_hash(
+            endpoint: 'ResearchLinksGetListLinktext',
+            params: { url: 'example.url' }
+          )
         end
         it 'returns response when request is correct' do
           expect(result).to be_kind_of(SearchmetricsClient::Response)
@@ -69,7 +80,9 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
     end
     # http://api.searchmetrics.com/v3/documentation/api-calls/service/ResearchSocialGetValueVisibility
     let(:query) do
-      SearchmetricsClient::Query.from_hash(endpoint: 'AdminStatusGetListProjects')
+      SearchmetricsClient::Query.from_hash(
+        endpoint: 'AdminStatusGetListProjects'
+      )
     end
 
     context 'when api credentials are configured' do
@@ -78,7 +91,8 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
       end
 
       after do
-        SearchmetricsClient.configuration.api_version = SearchmetricsClient::API_DEFAULT_VERSION
+        SearchmetricsClient.configuration.api_version =
+          SearchmetricsClient::API_DEFAULT_VERSION
       end
 
       describe '#send_request' do

@@ -2,8 +2,8 @@ require 'oauth2'
 require 'singleton'
 require 'forwardable'
 
-module SearchmetricsClient
-  class Client
+module SearchmetricsClient # :nodoc:
+  class Client # :nodoc:
     include Singleton
     extend Forwardable
 
@@ -23,11 +23,13 @@ module SearchmetricsClient
     # http://api.searchmetrics.com/v3/documentation/start
     def access_token_api_v3
       token_url = File.join(api_url, 'token')
-      client = OAuth2::Client.new(SearchmetricsClient.configuration.api_key,
-                                  SearchmetricsClient.configuration.api_secret,
-                                  site: SearchmetricsClient.configuration.api_base_url,
-                                  token_url: token_url,
-                                  token_method: :post)
+      client = OAuth2::Client.new(
+        SearchmetricsClient.configuration.api_key,
+        SearchmetricsClient.configuration.api_secret,
+        site: SearchmetricsClient.configuration.api_base_url,
+        token_url: token_url,
+        token_method: :post
+      )
       client.client_credentials.get_token
     end
   end

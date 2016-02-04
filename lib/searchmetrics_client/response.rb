@@ -1,8 +1,8 @@
 require 'forwardable'
 require 'multi_json'
 
-module SearchmetricsClient
-  class Response
+module SearchmetricsClient # :nodoc:
+  class Response # :nodoc:
     attr_reader :request
 
     extend Forwardable
