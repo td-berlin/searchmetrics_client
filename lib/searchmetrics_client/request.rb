@@ -25,7 +25,6 @@ module SearchmetricsClient
     def send_request
       check_credentials
       result = Client.instance.public_send(method, url)
-      check_errors(result)
       @response = SearchmetricsClient::Response.new(self, result)
     rescue OAuth2::Error => e
       check_errors(e.response)
@@ -53,12 +52,8 @@ module SearchmetricsClient
       SearchmetricsClient.configuration.api_key && SearchmetricsClient.configuration.api_secret
     end
 
-    # Handle both OAuth v1 and v2 Response object
-    # v1 is returning `Net::HTTPOK`... objects
-    # v2 is returning `OAuth::Response`
     def result_success?(result)
-      return true if result.respond_to?(:code) && result.code == '200'
-      return true if result.respond_to?(:status) && result.status == 200
+      return true if result.status == 200
       false
     end
 

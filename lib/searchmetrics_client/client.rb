@@ -1,4 +1,3 @@
-require 'oauth'
 require 'oauth2'
 require 'singleton'
 require 'forwardable'
@@ -10,13 +9,8 @@ module SearchmetricsClient
 
     def_delegators :access_token, :get, :post
 
-    # Memoize for each API versions
     def access_token
-      method = "access_token_api_#{SearchmetricsClient.configuration.api_version}"
-      @access_tokens ||= Hash.new do |h, key|
-        h[key] = send(key)
-      end
-      @access_tokens[method]
+      @access_token ||= access_token_api_v3
     end
 
     private
@@ -24,13 +18,6 @@ module SearchmetricsClient
     def api_url
       File.join(SearchmetricsClient.configuration.api_base_url,
                 SearchmetricsClient.configuration.api_version)
-    end
-
-    def access_token_api_v1
-      consumer = OAuth::Consumer.new(SearchmetricsClient.configuration.api_key,
-                                     SearchmetricsClient.configuration.api_secret,
-                                     site: SearchmetricsClient.configuration.api_base_url)
-      OAuth::AccessToken.from_hash(consumer, oauth_token: '', oauth_token_secret: '')
     end
 
     # http://api.searchmetrics.com/v3/documentation/start
