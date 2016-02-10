@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['developers@td-berlin.com']
 
   spec.summary       = 'A thin abstraction over the searchmetrics API'
+  spec.description   = 'Client library and thin abstraction over the' \
+    ' searchmetrics API'
   spec.homepage      = 'https://github.com/td-berlin/searchmetrics_client'
   spec.license       = 'MIT'
 
