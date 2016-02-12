@@ -1,2 +1,5 @@
 inherit_gem:
   td_critic: rubocop.yml
+
+RSpec/FilePath:
+  Enabled: False
