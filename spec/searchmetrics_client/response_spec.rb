@@ -16,7 +16,7 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
 
     # Memoize response to avoid errors
     # "Insufficient credits to make this service request."
-    # rubocop:disable Style/GlobalVars
+    # rubocop:disable RSpec/InstanceVariable
     let(:response) { @response }
 
     describe 'response' do
