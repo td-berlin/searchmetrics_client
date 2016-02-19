@@ -57,18 +57,6 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
           end
         end
       end
-
-      describe '#send_request_from_hash' do
-        let(:result) do
-          described_class.send_request_from_hash(
-            endpoint: 'ResearchLinksGetListLinktext',
-            params: { url: 'example.url' }
-          )
-        end
-        it 'returns response when request is correct' do
-          expect(result).to be_kind_of(SearchmetricsClient::Response)
-        end
-      end
     end
   end
 
