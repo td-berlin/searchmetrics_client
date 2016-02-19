@@ -5,19 +5,12 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
   context 'when api credentials are configured' do
     include_context 'with api credentials'
 
-    before :all do
-      VCR.use_cassette('searchmetrics') do
-        @response ||= SearchmetricsClient::Request.send_request_from_hash(
-          endpoint: 'ResearchLinksGetListLinktext',
-          params: { url: 'example.url' }
-        )
-      end
+    let(:response) do
+      SearchmetricsClient::Request.send_request_from_hash(
+        endpoint: 'ResearchLinksGetListLinktext',
+        params: { url: 'example.url' }
+      )
     end
-
-    # Memoize response to avoid errors
-    # "Insufficient credits to make this service request."
-    # rubocop:disable RSpec/InstanceVariable
-    let(:response) { @response }
 
     describe 'response' do
       it 'returns response when request is correct' do
