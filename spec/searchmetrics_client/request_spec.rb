@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
                                               record: :new_episodes } do
-  context 'APIv1' do
+  context 'APIv3' do
     let(:url) do
       File.join(SearchmetricsClient::API_BASE_URL,
                 api_version,
