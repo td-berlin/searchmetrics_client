@@ -32,7 +32,7 @@ end
 ```
 
 Additionally you can specify `api_version` and `api_url`, which defaults to
-`v1` and `http://api.searchmetrics.com` regardless.
+`v3` and `http://api.searchmetrics.com` regardless.
 
 ## Usage
 
@@ -85,7 +85,7 @@ response.endpoint # => "ResearchKeywordsGetListKeywordinfo"
 `#url` returns requested url:
 
 ```ruby
-response.url # => "http://api.searchmetrics.com/v1/ResearchKeywordsGetListKeywordinfo.json?countrycode=DE&keyword=ruby"
+response.url # => "http://api.searchmetrics.com/v3/ResearchKeywordsGetListKeywordinfo.json?countrycode=DE&keyword=ruby"
 ```
 
 Access to raw response is available by methods `#header` and `#body`.
