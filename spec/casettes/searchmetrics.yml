@@ -23,23 +23,25 @@ http_interactions:
       Server:
       - nginx/1.3.8
       Date:
-      - Thu, 04 Feb 2016 14:30:16 GMT
+      - Wed, 24 Feb 2016 09:13:26 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
       X-Powered-By:
       - PHP/5.3.10-1ubuntu3.15
+      Content-Length:
+      - '117'
+      Accept-Ranges:
+      - none
       Connection:
-      - close
+      - keep-alive
     body:
       encoding: UTF-8
       string: '{"access_token":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","expires_in":315360000,"token_type":"Bearer","scope":null}'
     http_version: 
-  recorded_at: Thu, 04 Feb 2016 14:30:16 GMT
+  recorded_at: Wed, 24 Feb 2016 09:13:26 GMT
 - request:
     method: get
-    uri: http://api.searchmetrics.com/v3/AdminStatusGetListProjects.json
+    uri: http://api.searchmetrics.com/v3/ResearchLinksGetListLinktext.json?url=searchmetrics.com
     body:
       encoding: US-ASCII
       string: ''
@@ -60,101 +62,47 @@ http_interactions:
       Server:
       - nginx/1.3.8
       Date:
-      - Thu, 04 Feb 2016 14:30:18 GMT
+      - Wed, 24 Feb 2016 09:13:28 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
       X-Powered-By:
       - PHP/5.3.10-1ubuntu3.15
       X-Request-Id:
-      - 6d979b6278419776b60e5029476fea52e27b968f
+      - 472bc244337435ace4cc4be173690ef69ff7a038
+      Content-Length:
+      - '4519'
+      Accept-Ranges:
+      - none
       Connection:
-      - close
+      - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[{"project_id":535741,"project_name":"XXX","project_url":"xxx.fr","keyword_count":310,"engine_count":1}],"count":1,"balance":59985}'
+      string: '{"count":5581,"response":[{"anchortext":"searchmetrics","frequency":13015,"percentage":8.47,"refdoms":1536},{"anchortext":"searchmetricsbot","frequency":988,"percentage":0.64,"refdoms":739},{"anchortext":"http:\/\/www.searchmetrics.com\/en\/searchmetrics-bot\/","frequency":1323,"percentage":0.86,"refdoms":241},{"anchortext":"search
+        metrics","frequency":765,"percentage":0.5,"refdoms":204},{"anchortext":"[redirect
+        302]","frequency":2854,"percentage":1.86,"refdoms":173},{"anchortext":"www.searchmetrics.com","frequency":712,"percentage":0.46,"refdoms":149},{"anchortext":"searchmetrics.com","frequency":752,"percentage":0.49,"refdoms":135},{"anchortext":"","frequency":3882,"percentage":2.53,"refdoms":113},{"anchortext":"Searchmetrics","frequency":5605,"percentage":3.65,"refdoms":107},{"anchortext":"searchmetrics
+        essentials","frequency":1836,"percentage":1.19,"refdoms":89},{"anchortext":"searchmetrics
+        suite","frequency":629,"percentage":0.41,"refdoms":71},{"anchortext":"marcus
+        tober","frequency":340,"percentage":0.22,"refdoms":67},{"anchortext":"hier","frequency":133,"percentage":0.09,"refdoms":55},{"anchortext":"http:\/\/www.searchmetrics.com","frequency":151,"percentage":0.1,"refdoms":51},{"anchortext":"website
+        speed test","frequency":1259,"percentage":0.82,"refdoms":50},{"anchortext":"here","frequency":126,"percentage":0.08,"refdoms":47},{"anchortext":"searchmetrics
+        gmbh","frequency":683,"percentage":0.44,"refdoms":44},{"anchortext":"[img]","frequency":647,"percentage":0.42,"refdoms":42},{"anchortext":"link
+        popularity","frequency":688,"percentage":0.45,"refdoms":36},{"anchortext":"study","frequency":65,"percentage":0.04,"refdoms":32},{"anchortext":"searchmetrics
+        rapid","frequency":172,"percentage":0.11,"refdoms":31},{"anchortext":"http:\/\/suite.searchmetrics.com\/en\/research","frequency":105,"percentage":0.07,"refdoms":28},{"anchortext":"seo
+        rankingfaktoren 2012 bei searchmetrics","frequency":94,"percentage":0.06,"refdoms":27},{"anchortext":"searchmetrics
+        blog","frequency":78,"percentage":0.05,"refdoms":27},{"anchortext":"rapid
+        searchmetrics seo tools","frequency":1829,"percentage":1.19,"refdoms":26},{"anchortext":"http:\/\/blog.searchmetrics.com\/de\/2014\/10\/07\/ranking-analyse-neuer-top-level-domains-berlin-tlds-in-d","frequency":71,"percentage":0.05,"refdoms":25},{"anchortext":"blog.searchmetrics.com","frequency":68,"percentage":0.04,"refdoms":25},{"anchortext":"searchmetrics
+        seo blog","frequency":69,"percentage":0.04,"refdoms":22},{"anchortext":"blog","frequency":1867,"percentage":1.21,"refdoms":21},{"anchortext":"http:\/\/www.searchmetrics.com\/de\/","frequency":67,"percentage":0.04,"refdoms":21},{"anchortext":"sitemap
+        generator","frequency":268,"percentage":0.17,"refdoms":19},{"anchortext":"http:\/\/www.searchmetrics.com\/en\/services\/ranking-factors-2013\/","frequency":51,"percentage":0.03,"refdoms":18},{"anchortext":"http:\/\/www.searchmetrics.com\/","frequency":32,"percentage":0.02,"refdoms":18},{"anchortext":"click
+        here to read the full report","frequency":19,"percentage":0.01,"refdoms":18},{"anchortext":"SearchMetrics","frequency":118,"percentage":0.08,"refdoms":17},{"anchortext":"suite.searchmetrics.com","frequency":25,"percentage":0.02,"refdoms":17},{"anchortext":"[redirect
+        301]","frequency":43,"percentage":0.03,"refdoms":16},{"anchortext":"searchmetrics
+        logo","frequency":22,"percentage":0.01,"refdoms":16},{"anchortext":"searchmetrics
+        website analyzer","frequency":23,"percentage":0.01,"refdoms":15},{"anchortext":"meta
+        tag analysis","frequency":633,"percentage":0.41,"refdoms":14},{"anchortext":"multi
+        pagerank checker","frequency":534,"percentage":0.35,"refdoms":14},{"anchortext":"pagerank
+        analysis","frequency":334,"percentage":0.22,"refdoms":14},{"anchortext":"http:\/\/www.searchmetrics.com\/en\/knowledge-base\/ranking-factors\/","frequency":40,"percentage":0.03,"refdoms":14},{"anchortext":"http:\/\/blog.searchmetrics.com\/us\/2011\/04\/12\/googles-panda-update-rolls-out-to-uk\/","frequency":38,"percentage":0.02,"refdoms":14},{"anchortext":"2014
+        ranking factors study","frequency":20,"percentage":0.01,"refdoms":14},{"anchortext":"link","frequency":17,"percentage":0.01,"refdoms":14},{"anchortext":"Searchmetrics
+        Essentials","frequency":6883,"percentage":4.48,"refdoms":13},{"anchortext":"searchmetrix","frequency":31,"percentage":0.02,"refdoms":13},{"anchortext":"studie","frequency":15,"percentage":0.01,"refdoms":13},{"anchortext":"marcus","frequency":71,"percentage":0.05,"refdoms":12}],"response_time":0.073302,"balance":52174}'
     http_version: 
-  recorded_at: Thu, 04 Feb 2016 14:30:18 GMT
-- request:
-    method: get
-    uri: http://api.searchmetrics.com/v3/ResearchLinksGetListLinktext.json?url=example.url
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Authorization:
-      - Bearer aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.3.8
-      Date:
-      - Thu, 04 Feb 2016 14:30:19 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      X-Powered-By:
-      - PHP/5.3.10-1ubuntu3.15
-      X-Request-Id:
-      - 2216421932bb42a4bffc99db8acfffcdd30a5f63
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"balance":59981}'
-    http_version: 
-  recorded_at: Thu, 04 Feb 2016 14:30:19 GMT
-- request:
-    method: get
-    uri: http://api.searchmetrics.com/v3/ResearchLinksGetListLinktext.json
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Authorization:
-      - Bearer aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Server:
-      - nginx/1.3.8
-      Date:
-      - Thu, 04 Feb 2016 14:30:19 GMT
-      Content-Type:
-      - application/json
-      Transfer-Encoding:
-      - chunked
-      X-Powered-By:
-      - PHP/5.3.10-1ubuntu3.15
-      X-Request-Id:
-      - 535738f1fd7d9ae22e30b75b4b7684efaf0f5455
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: '{"error":4001003,"error_message":"For service \"ResearchLinksGetListLinktext\"
-        parameter \"url\" is required!"}'
-    http_version: 
-  recorded_at: Thu, 04 Feb 2016 14:30:19 GMT
+  recorded_at: Wed, 24 Feb 2016 09:13:28 GMT
 - request:
     method: get
     uri: http://api.searchmetrics.com/v3/AdminStatusGetValueAvailableCredits.json
@@ -178,22 +126,66 @@ http_interactions:
       Server:
       - nginx/1.3.8
       Date:
-      - Thu, 04 Feb 2016 14:30:20 GMT
+      - Wed, 24 Feb 2016 09:13:28 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
       X-Powered-By:
       - PHP/5.3.10-1ubuntu3.15
       X-Request-Id:
-      - 0f82700fd6624510d956709e24abe2da081c9ab2
+      - ccab6cf508f4d34b9804942afa243d311764e536
+      Content-Length:
+      - '36'
+      Accept-Ranges:
+      - none
       Connection:
-      - close
+      - keep-alive
     body:
       encoding: UTF-8
-      string: '{"response":[59981],"balance":59980}'
+      string: '{"response":[52174],"balance":52173}'
     http_version: 
-  recorded_at: Thu, 04 Feb 2016 14:30:20 GMT
+  recorded_at: Wed, 24 Feb 2016 09:13:28 GMT
+- request:
+    method: get
+    uri: http://api.searchmetrics.com/v3/ResearchLinksGetListLinktext.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx/1.3.8
+      Date:
+      - Wed, 24 Feb 2016 09:13:28 GMT
+      Content-Type:
+      - application/json
+      X-Powered-By:
+      - PHP/5.3.10-1ubuntu3.15
+      X-Request-Id:
+      - 168dad1067bdf48e92d2631fdddb1930784be0cb
+      Content-Length:
+      - '111'
+      Accept-Ranges:
+      - none
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"error":4001003,"error_message":"For service \"ResearchLinksGetListLinktext\"
+        parameter \"url\" is required!"}'
+    http_version: 
+  recorded_at: Wed, 24 Feb 2016 09:13:28 GMT
 - request:
     method: get
     uri: http://api.searchmetrics.com/v3/ResearchLinksGetListLinktex.json
@@ -217,20 +209,22 @@ http_interactions:
       Server:
       - nginx/1.3.8
       Date:
-      - Thu, 04 Feb 2016 14:44:19 GMT
+      - Wed, 24 Feb 2016 09:13:29 GMT
       Content-Type:
       - application/json
-      Transfer-Encoding:
-      - chunked
       X-Powered-By:
       - PHP/5.3.10-1ubuntu3.15
       X-Request-Id:
-      - 0ec25fbc85d4372bd74d483a4016e16ce50fc0ae
+      - b16eee69ecf8a0740cdddd1606d4f1535adc2701
+      Content-Length:
+      - '83'
+      Accept-Ranges:
+      - none
       Connection:
-      - close
+      - keep-alive
     body:
       encoding: UTF-8
       string: '{"error":4001004,"error_message":"Unknown Service \"ResearchLinksGetListLinktex\""}'
     http_version: 
-  recorded_at: Thu, 04 Feb 2016 14:44:19 GMT
+  recorded_at: Wed, 24 Feb 2016 09:13:29 GMT
 recorded_with: VCR 3.0.0

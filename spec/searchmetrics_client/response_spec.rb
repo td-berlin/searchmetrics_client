@@ -8,7 +8,7 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
     let(:response) do
       SearchmetricsClient::Request.send_request_from_hash(
         endpoint: 'ResearchLinksGetListLinktext',
-        params: { url: 'example.url' }
+        params: { url: 'searchmetrics.com' }
       )
     end
 
@@ -19,7 +19,10 @@ describe SearchmetricsClient::Response, vcr: { cassette_name: 'searchmetrics',
 
       it 'return hash data' do
         expect(response.value).to be_instance_of Hash
-        expect(response.value).to eq(balance: 59_981)
+      end
+
+      it 'return array of values' do
+        expect(response.value[:response]).to be_kind_of(Array)
       end
 
       it 'has valid status code' do

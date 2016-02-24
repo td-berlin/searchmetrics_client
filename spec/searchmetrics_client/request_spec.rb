@@ -11,7 +11,7 @@ describe SearchmetricsClient::Request, vcr: { cassette_name: 'searchmetrics',
     let(:query) do
       SearchmetricsClient::Query.from_hash(
         endpoint: 'ResearchLinksGetListLinktext',
-        params: { url: 'example.url' }
+        params: { url: 'searchmetrics.com' }
       )
     end
     let(:wrong_params_query) do
