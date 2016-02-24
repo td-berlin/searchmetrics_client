@@ -10,6 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['developers@td-berlin.com']
 
   spec.summary       = 'A thin abstraction over the searchmetrics API'
+  spec.description   = 'Client library and thin abstraction over the' \
+    ' searchmetrics API'
   spec.homepage      = 'https://github.com/td-berlin/searchmetrics_client'
   spec.license       = 'MIT'
 
@@ -20,14 +22,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'oauth', '~> 0.4.7'
   spec.add_dependency 'oauth2', '~> 1.0'
   spec.add_dependency 'multi_json', '~> 1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'vcr', '~> 3.0'
   spec.add_development_dependency 'webmock', '~> 1.22'
-  spec.add_development_dependency 'td_critic', '~> 0.1'
+  spec.add_development_dependency 'td_critic', '~> 0.2'
 end

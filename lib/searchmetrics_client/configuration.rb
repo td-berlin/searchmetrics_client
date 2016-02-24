@@ -1,4 +1,4 @@
-module SearchmetricsClient
+module SearchmetricsClient # :nodoc:
   class << self
     attr_accessor :configuration
   end
@@ -8,7 +8,7 @@ module SearchmetricsClient
     yield(configuration)
   end
 
-  class Configuration
+  class Configuration # :nodoc:
     attr_accessor :api_key, :api_secret, :api_version, :api_base_url
 
     def initialize

@@ -1,8 +1,8 @@
 require 'forwardable'
 require 'multi_json'
 
-module SearchmetricsClient
-  class Response
+module SearchmetricsClient # :nodoc:
+  class Response # :nodoc:
     attr_reader :request
 
     extend Forwardable
@@ -19,7 +19,7 @@ module SearchmetricsClient
     end
 
     def status
-      @raw_response.code.to_i
+      @raw_response.status
     end
   end
 end
